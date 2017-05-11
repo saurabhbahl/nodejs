@@ -11,24 +11,29 @@ var b3 = Buffer.concat([b1, b2]);
 
 console.log("Buffer Cncatenate : "+ b3);
 
+
+
+// copy buffer1
+var buff = new Buffer("ABC");
+var buff2 = new Buffer(2);
+
+buff.copy(buff2);
+console.log(buff.toString('utf-8'));
+
+//
+
+// Slice Buffer
+
+var buff = new Buffer("Startit");
+
+var buff = buff.slice(0,3);
+
+console.log(buff.length);
 */
 
-var buff1 = new Buffer("Hi");
-var buff2 = new Buffer("Hello");
+// Compare buffers
 
-var buff3 = buff1.compare(buff2);
+var buff1 = new Buffer("ABC");
+var buff2 = new Buffer("ABCD");
 
-if( buff3 < 0 )
-{
-	console.log(buff1 + ' comes before '+ buff2);
-}
-else if( buff3 == 0 )
-{
-	console.log(buff1 + ' is same as '+ buff2);
-}
-else
-{
-	console.log(buff2 + ' comes before '+ buff1);
-}
-
-
+console.log(buff1.compare(buff2));
